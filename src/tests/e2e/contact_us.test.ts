@@ -15,10 +15,10 @@ describe('Contact us flows', () => {
 
   test.beforeEach(async () => {
     await homeOperations.visit();
-    await homeOperations.goToContactUs();
   });
 
-  test.only('User submitted the "new home information" form successfully', { tag: ['@smoke', '@regression'] }, async () => {
+  test('User submitted the "new home information" form successfully', { tag: ['@smoke', '@regression'] }, async () => {
+    await homeOperations.goToContactUs();
     await contactUsOperations.submitNewHomeInformation(newHomeInformation);
   });
 });
